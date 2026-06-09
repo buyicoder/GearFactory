@@ -5,6 +5,7 @@ param(
     [string]$PaletteName = "ruby",
     [string]$Shape = "vanilla",
     [string]$ItemName = "all",
+    [switch]$Apply,     # Only write to project when explicitly requested
     [switch]$ListPalettes,
     [switch]$ListShapes
 )
@@ -117,7 +118,9 @@ if (!(Test-Path $shapeDir)) { Write-Error "Shape not found: $Shape"; exit 1 }
 # 形状前缀映射 (不同来源用不同文件名前缀)
 $prefixes = @("diamond", "copper", "iron", "golden", "netherite", "stone", "wooden")
 
-Write-Host "GearFactory v1.1: $PaletteName / $Shape"
+$mode = if ($Apply) { "APPLY (library + project)" } else { "LIBRARY ONLY" }
+Write-Host "GearFactory v1.2 $mode"
+Write-Host " $PaletteName / $Shape"
 
 foreach ($n in $itemNames) {
     if ($ItemName -ne "all" -and $ItemName -ne $n) { continue }
@@ -131,7 +134,7 @@ foreach ($n in $itemNames) {
     if ($src -eq $null) { $src = "$shapeDir/${n}.png" }
     if (!(Test-Path $src)) { continue }
     Forge $src "$OutputBase/$PaletteName/item/${PaletteName}_$n.png" "$PaletteName/$n"
-    Forge $src "$ProjectAssets/item/ruby_$n.png" "$PaletteName/$n -> project"
+    if ($Apply) { Forge $src "$ProjectAssets/item/ruby_$n.png" "$PaletteName/$n -> project" }
 }
 foreach ($n in $equipNames) {
     if ($ItemName -ne "all" -and $ItemName -ne $n) { continue }
@@ -146,6 +149,6 @@ foreach ($n in $equipNames) {
     if (!(Test-Path $src)) { continue }
     $dstDir = "entity/equipment/$n"
     Forge $src "$OutputBase/$PaletteName/equipment/$n/${PaletteName}.png" "$PaletteName/$n"
-    Forge $src "$ProjectAssets/$dstDir/ruby.png" "$PaletteName/$n -> project"
+    if ($Apply) { Forge $src "$ProjectAssets/$dstDir/ruby.png" "$PaletteName/$n -> project" }
 }
-Write-Host "Done!"
+if ($Apply) { Write-Host "Done! Output + Project applied." } else { Write-Host "Done! Library only. Use -Apply to write to project." }
