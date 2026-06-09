@@ -1,5 +1,5 @@
 # ============================================================
-# GearFactory v1.0
+# GearFactory v1.1
 # ============================================================
 param(
     [string]$PaletteName = "ruby",
@@ -114,19 +114,36 @@ $equipNames = @("humanoid","humanoid_leggings")
 $shapeDir = "$TemplateDir/shapes/$Shape"
 if (!(Test-Path $shapeDir)) { Write-Error "Shape not found: $Shape"; exit 1 }
 
-Write-Host "GearFactory v1.0: $PaletteName / $Shape"
+# 形状前缀映射 (不同来源用不同文件名前缀)
+$prefixes = @("diamond", "copper", "iron", "golden", "netherite", "stone", "wooden")
+
+Write-Host "GearFactory v1.1: $PaletteName / $Shape"
 
 foreach ($n in $itemNames) {
     if ($ItemName -ne "all" -and $ItemName -ne $n) { continue }
-    $src = "$shapeDir/diamond_$n.png"
-    if ($Shape -eq "copper") { $src = "$shapeDir/copper_$n.png" }
-    if (!(Test-Path $src)) { $src = "$shapeDir/${n}.png" }
+    # 尝试多个前缀查找文件
+    $src = $null
+    foreach ($pfx in $prefixes) {
+        $candidate = "$shapeDir/${pfx}_$n.png"
+        if (Test-Path $candidate) { $src = $candidate; break }
+    }
+    # 回退: 直接用物品名
+    if ($src -eq $null) { $src = "$shapeDir/${n}.png" }
+    if (!(Test-Path $src)) { continue }
     Forge $src "$OutputBase/$PaletteName/item/${PaletteName}_$n.png" "$PaletteName/$n"
     Forge $src "$ProjectAssets/item/ruby_$n.png" "$PaletteName/$n -> project"
 }
 foreach ($n in $equipNames) {
     if ($ItemName -ne "all" -and $ItemName -ne $n) { continue }
-    $src = "$TemplateDir/equipment/$n.png"
+    # 优先用形状源里的装备纹理
+    $src = $null
+    foreach ($pfx in $prefixes) {
+        $candidate = "$shapeDir/${pfx}.png"
+        if (Test-Path $candidate -and $n -eq "humanoid") { $src = $candidate; break }
+    }
+    if ($src -eq $null) { $src = "$shapeDir/${n}.png" }
+    if (!(Test-Path $src)) { $src = "$TemplateDir/equipment/$n.png" }
+    if (!(Test-Path $src)) { continue }
     $dstDir = "entity/equipment/$n"
     Forge $src "$OutputBase/$PaletteName/equipment/$n/${PaletteName}.png" "$PaletteName/$n"
     Forge $src "$ProjectAssets/$dstDir/ruby.png" "$PaletteName/$n -> project"
