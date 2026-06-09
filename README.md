@@ -1,4 +1,4 @@
-# RubyForge — Minecraft Equipment Texture Engine
+# GearFactory — Minecraft Equipment Texture Engine
 
 Generate thousands of unique Minecraft tool and armor textures from base templates + color palettes.
 
