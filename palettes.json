@@ -1,0 +1,22 @@
+{
+  "ruby":       { "outline":"#2A0000","shadow":"#3D0000","dark":"#5A0000","base":"#8B0000","mid":"#B51515","light":"#DC143C","shine":"#FF6B6B","sparkle":"#FFC0C0","h_dark":"#5C3A0A","h_base":"#8B6914","h_light":"#B8902A" },
+  "sapphire":   { "outline":"#000020","shadow":"#00003D","dark":"#00005A","base":"#00008B","mid":"#1515B5","light":"#4169E1","shine":"#6B6BFF","sparkle":"#C0C0FF","h_dark":"#5C3A0A","h_base":"#8B6914","h_light":"#B8902A" },
+  "emerald":    { "outline":"#002000","shadow":"#003D00","dark":"#005A00","base":"#008B00","mid":"#15B515","light":"#32CD32","shine":"#6BFF6B","sparkle":"#C0FFC0","h_dark":"#5C3A0A","h_base":"#8B6914","h_light":"#B8902A" },
+  "amethyst":   { "outline":"#200020","shadow":"#3D003D","dark":"#5A005A","base":"#8B008B","mid":"#B515B5","light":"#9932CC","shine":"#DA70D6","sparkle":"#F0C0F0","h_dark":"#5C3A0A","h_base":"#8B6914","h_light":"#B8902A" },
+  "topaz":      { "outline":"#2A1500","shadow":"#3D2500","dark":"#5A3A00","base":"#8B5A00","mid":"#B58015","light":"#FFD700","shine":"#FFE55C","sparkle":"#FFF5C0","h_dark":"#5C3A0A","h_base":"#8B6914","h_light":"#B8902A" },
+  "obsidian":   { "outline":"#050505","shadow":"#0A0A0A","dark":"#151520","base":"#1A1A2E","mid":"#282844","light":"#2D2D44","shine":"#4A4A6A","sparkle":"#8080A0","h_dark":"#0A0A0A","h_base":"#151515","h_light":"#252525" },
+  "silver":     { "outline":"#252525","shadow":"#3A3A3A","dark":"#505050","base":"#808080","mid":"#A0A0A0","light":"#C0C0C0","shine":"#F0F0F0","sparkle":"#FFFFFF","h_dark":"#3A2A1A","h_base":"#5C4033","h_light":"#806040" },
+  "rose_gold":  { "outline":"#2A1010","shadow":"#3D1818","dark":"#5A2828","base":"#B5654B","mid":"#D08060","light":"#E8A090","shine":"#FFD0C0","sparkle":"#FFE8E0","h_dark":"#3A1A0A","h_base":"#5C3A00","h_light":"#8B6020" },
+  "coral":      { "outline":"#200A10","shadow":"#301018","dark":"#4A1520","base":"#C04830","mid":"#E06040","light":"#FF6B50","shine":"#FF9E8E","sparkle":"#FFD0C8","h_dark":"#4A3020","h_base":"#705030","h_light":"#9A7040" },
+  "amber":      { "outline":"#201000","shadow":"#301800","dark":"#4A2000","base":"#C07000","mid":"#E09020","light":"#FFA030","shine":"#FFC870","sparkle":"#FFE8C0","h_dark":"#3A1A0A","h_base":"#5C3A00","h_light":"#8B6020" },
+  "jade":       { "outline":"#001510","shadow":"#002520","dark":"#003320","base":"#006B45","mid":"#1A9A60","light":"#2EBA85","shine":"#6BE8B5","sparkle":"#C0FFE0","h_dark":"#3A2A15","h_base":"#4A3020","h_light":"#6B4A30" },
+  "crimson":    { "outline":"#1A0000","shadow":"#2A0000","dark":"#3D0000","base":"#7A0A0A","mid":"#A51515","light":"#C42020","shine":"#F05050","sparkle":"#FFB0B0","h_dark":"#2A1005","h_base":"#3A1A0A","h_light":"#5C2A15" },
+  "ocean":      { "outline":"#000A15","shadow":"#001020","dark":"#001530","base":"#003D6B","mid":"#1058A0","light":"#1A80C0","shine":"#50C0F0","sparkle":"#B0E8FF","h_dark":"#1A2A3A","h_base":"#2A3A4A","h_light":"#3A5060" },
+  "forest":     { "outline":"#0A1002","shadow":"#101A05","dark":"#152005","base":"#2D5A15","mid":"#3A7A20","light":"#4A9A30","shine":"#72D050","sparkle":"#C0FFA0","h_dark":"#2A1A0A","h_base":"#3A2A15","h_light":"#5C4020" },
+  "inferno":    { "outline":"#200800","shadow":"#301000","dark":"#4A1000","base":"#8B2500","mid":"#C04000","light":"#E85500","shine":"#FF9030","sparkle":"#FFD0A0","h_dark":"#1A0802","h_base":"#2A1005","h_light":"#4A1A0A" },
+  "frost":      { "outline":"#051015","shadow":"#0A1825","dark":"#0A2030","base":"#1A5080","mid":"#3070B0","light":"#50B0E0","shine":"#A0E0FF","sparkle":"#E0F4FF","h_dark":"#2A3035","h_base":"#3A4045","h_light":"#505860" },
+  "shadow":     { "outline":"#050008","shadow":"#0A0010","dark":"#0A0015","base":"#1E0535","mid":"#2A1550","light":"#3A2060","shine":"#5A4090","sparkle":"#A080D0","h_dark":"#0A050A","h_base":"#150A15","h_light":"#252025" },
+  "celestial":  { "outline":"#0A0818","shadow":"#100C25","dark":"#151030","base":"#2A1A60","mid":"#4A3090","light":"#6A50C0","shine":"#C0A0FF","sparkle":"#E8E0FF","h_dark":"#4A3A0A","h_base":"#F0D060","h_light":"#F8E890" },
+  "thunder":    { "outline":"#0D0518","shadow":"#150820","dark":"#1A0A30","base":"#3A1580","mid":"#6028C0","light":"#8040E0","shine":"#C080FF","sparkle":"#E8D0FF","h_dark":"#4A3A0A","h_base":"#E0C040","h_light":"#F8E880" },
+  "onyx":       { "outline":"#050505","shadow":"#0A0A0A","dark":"#0A0A0A","base":"#202020","mid":"#353535","light":"#454545","shine":"#707070","sparkle":"#B0B0B0","h_dark":"#3A0000","h_base":"#8B0000","h_light":"#C02020" }
+}

@@ -1,0 +1,17 @@
+# Vanilla Minecraft textures (copyright Mojang)
+templates/item/
+templates/equipment/
+
+# Downloaded external packs (check their licenses)
+templates/external/copper_tools/
+templates/external/tool_trims/
+templates/external/carbon_ghost/
+
+# Tier engine (old/experimental)
+forge_tier.ps1
+output_tier/
+templates/trim/
+templates/glow/
+
+# Build artifacts
+*.zip
