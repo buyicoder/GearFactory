@@ -5,6 +5,7 @@ param(
     [string]$PaletteName = "ruby",
     [string]$Shape = "vanilla",
     [string]$ItemName = "all",
+    [string]$OutputName = "ruby",  # Custom project output prefix (e.g. "thunder")
     [switch]$Apply,     # Only write to project when explicitly requested
     [switch]$ListPalettes,
     [switch]$ListShapes
@@ -134,7 +135,7 @@ foreach ($n in $itemNames) {
     if ($src -eq $null) { $src = "$shapeDir/${n}.png" }
     if (!(Test-Path $src)) { continue }
     Forge $src "$OutputBase/$PaletteName/item/${PaletteName}_$n.png" "$PaletteName/$n"
-    if ($Apply) { Forge $src "$ProjectAssets/item/ruby_$n.png" "$PaletteName/$n -> project" }
+    if ($Apply) { Forge $src "$ProjectAssets/item/${OutputName}_$n.png" "$PaletteName/$n -> project" }
 }
 foreach ($n in $equipNames) {
     if ($ItemName -ne "all" -and $ItemName -ne $n) { continue }
@@ -149,6 +150,6 @@ foreach ($n in $equipNames) {
     if (!(Test-Path $src)) { continue }
     $dstDir = "entity/equipment/$n"
     Forge $src "$OutputBase/$PaletteName/equipment/$n/${PaletteName}.png" "$PaletteName/$n"
-    if ($Apply) { Forge $src "$ProjectAssets/$dstDir/ruby.png" "$PaletteName/$n -> project" }
+    if ($Apply) { Forge $src "$ProjectAssets/$dstDir/${OutputName}.png" "$PaletteName/$n -> project" }
 }
 if ($Apply) { Write-Host "Done! Output + Project applied." } else { Write-Host "Done! Library only. Use -Apply to write to project." }
