@@ -21,3 +21,6 @@ templates/shapes/vanilla/
 
 # Duplicate/deprecated output paths
 output/*/entity/
+
+# Downloaded source packs (large)
+templates/external/legendary/
